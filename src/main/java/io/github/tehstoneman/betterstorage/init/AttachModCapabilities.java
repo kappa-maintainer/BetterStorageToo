@@ -1,7 +1,7 @@
 package io.github.tehstoneman.betterstorage.init;
 
 import io.github.tehstoneman.betterstorage.ModInfo;
-import io.github.tehstoneman.betterstorage.common.capabilities.CapabilityCrate;
+import io.github.tehstoneman.betterstorage.world.capabilities.CratePileCapability;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,6 +14,6 @@ public class AttachModCapabilities
 	@SubscribeEvent
 	public static void attachWorldCapabilities( AttachCapabilitiesEvent< Level > event )
 	{
-		event.addCapability( CapabilityCrate.CAPABILITY_RESOURCE, new CapabilityCrate.Provider() );
+		event.addCapability( CratePileCapability.CAPABILITY_RESOURCE, new CratePileCapability.Provider() );
 	}
 }

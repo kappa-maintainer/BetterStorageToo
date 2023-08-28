@@ -1,7 +1,7 @@
 package io.github.tehstoneman.betterstorage.api;
 
-import io.github.tehstoneman.betterstorage.common.item.HexKeyItem;
-import io.github.tehstoneman.betterstorage.common.world.storage.HexKeyConfig;
+import io.github.tehstoneman.betterstorage.world.item.HexKeyConfig;
+import io.github.tehstoneman.betterstorage.world.item.HexKeyItem;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 /**

@@ -1,6 +1,6 @@
 {
-	"textures":
-	{
-		"particle": "block/oak_planks"
-	}
+	"loader": "forge:obj",
+    "model": "betterstorage:models/block/locker.obj",
+    "flip_v": true,
+	"textures": { "particle": "betterstorage:model/locker" }
 }

@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemStack;
  * Interface used to describe an item that can be dyed.
  *
  * @author TehStoneMan
- *
  */
 public interface IDyeableItem
 {
@@ -39,7 +38,7 @@ public interface IDyeableItem
 		if( itemStack.hasTag() )
 		{
 			final CompoundTag compound = itemStack.getTag();
-			return compound.contains( "Color" );
+			if( compound != null) return compound.contains( "Color" );
 		}
 		return false;
 	}
@@ -56,7 +55,7 @@ public interface IDyeableItem
 		if( hasColor( itemStack ) )
 		{
 			final CompoundTag compound = itemStack.getTag();
-			return compound.getInt( "Color" );
+			if( compound != null)  return compound.getInt( "Color" );
 		}
 		return getDefaultColor();
 	}
@@ -66,7 +65,7 @@ public interface IDyeableItem
 	 *
 	 * @return The color expressed as an int.
 	 */
-	public int getDefaultColor();
+	int getDefaultColor();
 
 	/**
 	 * Set the color of an {@link ItemStack}.
@@ -92,65 +91,62 @@ public interface IDyeableItem
 	 *            A list of {@link DyeColor}s to apply.
 	 * @return an {@link ItemStack} with the applied dyes.
 	 */
-	public static ItemStack dyeItem( ItemStack itemStack, List< DyeColor > dyeList )
+	static ItemStack dyeItem( ItemStack itemStack, List< DyeColor > dyeList )
 	{
-		ItemStack restuleStacktack = ItemStack.EMPTY;
+		ItemStack resultStack = ItemStack.EMPTY;
 
-		final int[] aint = new int[3];
-		int i = 0;
-		int count = 0;
+		final int[]  aInt        = new int[3];
+		int          i           = 0;
+		int          count       = 0;
 		IDyeableItem dyeableItem = null;
-		final Item item = itemStack.getItem();
+		final Item   item        = itemStack.getItem();
 
 		if( item instanceof IDyeableItem )
 		{
-			dyeableItem = (IDyeableItem)item;
-			restuleStacktack = itemStack.copy();
-			restuleStacktack.setCount( 1 );
+			dyeableItem      = (IDyeableItem)item;
+			resultStack = itemStack.copy();
+			resultStack.setCount( 1 );
 
 			if( dyeableItem.hasColor( itemStack ) )
 			{
-				final int color = dyeableItem.getColor( restuleStacktack );
-				final float r = ( color >> 16 & 255 ) / 255.0F;
-				final float g = ( color >> 8 & 255 ) / 255.0F;
-				final float b = ( color & 255 ) / 255.0F;
-				i = (int)( i + Math.max( r, Math.max( g, b ) ) * 255.0F );
-				aint[0] = (int)( aint[0] + r * 255.0F );
-				aint[1] = (int)( aint[1] + g * 255.0F );
-				aint[2] = (int)( aint[2] + b * 255.0F );
+				final int   color = dyeableItem.getColor( resultStack );
+				final float r     = ( color >> 16 & 255 ) / 255.0F;
+				final float g     = ( color >> 8 & 255 ) / 255.0F;
+				final float b     = ( color & 255 ) / 255.0F;
+				i       = (int)( i + Math.max( r, Math.max( g, b ) ) * 255.0F );
+				aInt[0] = (int)( aInt[0] + r * 255.0F );
+				aInt[1] = (int)( aInt[1] + g * 255.0F );
+				aInt[2] = (int)( aInt[2] + b * 255.0F );
 				++count;
 			}
 
-			for( final DyeColor dyeitem : dyeList )
+			for( final DyeColor dyeItem : dyeList )
 			{
-				final float[] afloat = dyeitem.getTextureDiffuseColors();
-				final int r = (int)( afloat[0] * 255.0F );
-				final int g = (int)( afloat[1] * 255.0F );
-				final int b = (int)( afloat[2] * 255.0F );
-				i += Math.max( r, Math.max( g, b ) );
-				aint[0] += r;
-				aint[1] += g;
-				aint[2] += b;
+				final float[] afloat = dyeItem.getTextureDiffuseColors();
+				final int     r      = (int)( afloat[0] * 255.0F );
+				final int     g      = (int)( afloat[1] * 255.0F );
+				final int     b      = (int)( afloat[2] * 255.0F );
+				i       += Math.max( r, Math.max( g, b ) );
+				aInt[0] += r;
+				aInt[1] += g;
+				aInt[2] += b;
 				++count;
 			}
 		}
 
 		if( dyeableItem == null )
 			return ItemStack.EMPTY;
-		else
-		{
-			int r = aint[0] / count;
-			int g = aint[1] / count;
-			int b = aint[2] / count;
-			final float f3 = (float)i / (float)count;
-			final float f4 = Math.max( r, Math.max( g, b ) );
-			r = (int)( r * f3 / f4 );
-			g = (int)( g * f3 / f4 );
-			b = (int)( b * f3 / f4 );
-			int j2 = ( r << 8 ) + g;
-			j2 = ( j2 << 8 ) + b;
-			dyeableItem.setColor( restuleStacktack, j2 );
-			return restuleStacktack;
-		}
+		int         r  = aInt[0] / count;
+		int         g  = aInt[1] / count;
+		int         b  = aInt[2] / count;
+		final float f3 = (float)i / (float)count;
+		final float f4 = Math.max( r, Math.max( g, b ) );
+		r = (int)( r * f3 / f4 );
+		g = (int)( g * f3 / f4 );
+		b = (int)( b * f3 / f4 );
+		int j2 = ( r << 8 ) + g;
+		j2 = ( j2 << 8 ) + b;
+		dyeableItem.setColor( resultStack, j2 );
+		return resultStack;
 	}
 }

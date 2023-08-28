@@ -2,5 +2,5 @@
 	"loader": "betterstorage:xobj",
     "model": "betterstorage:models/block/reinforced_locker_frame.obj",
     "flip-v": true,
-	"textures": { "particle": "betterstorage:models/reinforced_frame" }
+	"textures": { "particle": "betterstorage:model/reinforced_frame" }
 }

@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"cSpell.words": [
+			"AABB",
+			"betterstorage",
+			"blit",
+			"blockentity",
+			"chestplate",
+			"Clientbound",
+			"cratepile",
+			"Cullable",
+			"datafixers",
+			"enchantability",
+			"Enchantable",
+			"ENTITYBLOCK",
+			"Fullbright",
+			"Gson",
+			"Hotbar",
+			"INBT",
+			"ITEMSTACK",
+			"Knockback",
+			"lockpicking",
+			"modid",
+			"mojang",
+			"mtllib",
+			"populator",
+			"Renderable",
+			"unlocalized",
+			"usemtl",
+			"Voxel",
+			"xobj"
+		],
+		"java.format.settings.url": ".vscode/java-formatter.xml"
+	}
+}

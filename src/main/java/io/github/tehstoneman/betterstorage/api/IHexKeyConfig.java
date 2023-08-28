@@ -1,7 +1,5 @@
 package io.github.tehstoneman.betterstorage.api;
 
-import javax.annotation.Nonnull;
-
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.INBTSerializable;
@@ -19,7 +17,7 @@ public interface IHexKeyConfig extends IItemHandler, INBTSerializable< CompoundT
 	 *
 	 * @return true if empty
 	 */
-	public boolean isEmpty();
+	boolean isEmpty();
 
 	/**
 	 * Overrides the stack in the given slot
@@ -29,5 +27,5 @@ public interface IHexKeyConfig extends IItemHandler, INBTSerializable< CompoundT
 	 * @param stack
 	 *            ItemStack to set slot to (may be empty).
 	 **/
-	public void setStackInSlot( int slot, @Nonnull ItemStack stack );
+	void setStackInSlot( int slot, ItemStack stack );
 }

@@ -1,6 +1,6 @@
 {
 	"loader": "forge:obj",
     "model": "betterstorage:models/block/reinforced_locker.obj",
-    "flip-v": true,
-	"textures": { "particle": "betterstorage:models/reinforced_locker" }
+    "flip_v": true,
+	"textures": { "particle": "betterstorage:model/reinforced_locker" }
 }

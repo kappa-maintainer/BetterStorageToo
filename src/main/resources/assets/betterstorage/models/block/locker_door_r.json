@@ -1,0 +1,6 @@
+{
+	"loader": "forge:obj",
+    "model": "betterstorage:models/block/locker_door_r.obj",
+    "flip-v": true,
+	"textures": { "particle": "betterstorage:model/locker" }
+}

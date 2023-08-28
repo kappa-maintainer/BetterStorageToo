@@ -3,42 +3,18 @@ package io.github.tehstoneman.betterstorage.client.gui;
 import io.github.tehstoneman.betterstorage.ModInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn( Dist.CLIENT )
 public class BetterStorageGuiFactory // implements IModGuiFactory
 {
-	// @Override
-	public void initialize( Minecraft minecraftInstance )
-	{}
-
-	// @Override
-	public boolean hasConfigGui()
-	{
-		return true;
-	}
-
-	// @Override
-	public Screen createConfigGui( Screen parentScreen )
-	{
-		return new BetterStorageGuiConfig( parentScreen );
-	}
-
-	/*
-	 * @Override
-	 * public Set< RuntimeOptionCategoryElement > runtimeGuiCategories()
-	 * {
-	 * return null;
-	 * }
-	 */
-
 	public static class BetterStorageGuiConfig extends Screen
 	{
 		protected BetterStorageGuiConfig( Screen parentScreen )
 		{
-			super( new TranslatableComponent( ModInfo.MOD_ID ) );
+			super( Component.translatable( ModInfo.MOD_ID ) );
 		}
 
 		/*
@@ -66,4 +42,28 @@ public class BetterStorageGuiFactory // implements IModGuiFactory
 		// return configElements;
 		// }
 	}
+
+	// @Override
+	public Screen createConfigGui( Screen parentScreen )
+	{
+		return new BetterStorageGuiConfig( parentScreen );
+	}
+
+	// @Override
+	public boolean hasConfigGui()
+	{
+		return true;
+	}
+
+	/*
+	 * @Override
+	 * public Set< RuntimeOptionCategoryElement > runtimeGuiCategories()
+	 * {
+	 * return null;
+	 * }
+	 */
+
+	// @Override
+	public void initialize( Minecraft minecraftInstance )
+	{}
 }

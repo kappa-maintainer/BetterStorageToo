@@ -8,17 +8,19 @@ import net.minecraftforge.network.simple.SimpleChannel;
 public class ModNetwork
 {
 	public static ResourceLocation	CHANEL_NAME		= new ResourceLocation( ModInfo.MOD_ID, "network" );
-	public static String			NETWORK_VERSION	= new ResourceLocation( ModInfo.MOD_ID, "1" ).toString();
+	public static String			NETWORK_VERSION	= "1";
 
 	public static SimpleChannel getNetworkChannel()
 	{
-		final SimpleChannel channel = NetworkRegistry.ChannelBuilder.named( CHANEL_NAME ).clientAcceptedVersions( version -> true )
-				.serverAcceptedVersions( version -> true ).networkProtocolVersion( () -> NETWORK_VERSION ).simpleChannel();
+		final SimpleChannel channel = NetworkRegistry.ChannelBuilder.named( CHANEL_NAME ).networkProtocolVersion( () -> NETWORK_VERSION )
+			.clientAcceptedVersions( version -> true ).serverAcceptedVersions( version -> true ).simpleChannel();
 
 		int index = 1;
 
 		channel.messageBuilder( UpdateCrateMessage.class, index++ ).decoder( UpdateCrateMessage::decode ).encoder( UpdateCrateMessage::encode )
-				.consumer( UpdateCrateMessage::handle ).add();
+			.consumerNetworkThread( UpdateCrateMessage::handle ).add();
+		channel.messageBuilder( UpdateLockMessage.class, index++ ).decoder( UpdateLockMessage::decode ).encoder( UpdateLockMessage::encode )
+			.consumerNetworkThread( UpdateLockMessage::handle ).add();
 
 		return channel;
 	}

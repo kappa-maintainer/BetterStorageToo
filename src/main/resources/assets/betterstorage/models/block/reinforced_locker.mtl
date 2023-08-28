@@ -10,7 +10,7 @@ Ke 0.0 0.0 0.0
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd betterstorage:models/reinforced_locker
+map_Kd betterstorage:model/reinforced_locker
 
 newmtl reinforced_frame
 Ns 225.000000
@@ -21,4 +21,4 @@ Ke 0.0 0.0 0.0
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd betterstorage:models/reinforced_frame
+map_Kd betterstorage:model/reinforced_frame

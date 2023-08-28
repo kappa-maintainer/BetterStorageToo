@@ -2,5 +2,5 @@
 	"loader": "forge:obj",
     "model": "betterstorage:models/block/reinforced_locker_door_large_r.obj",
     "flip-v": true,
-	"textures": { "particle": "betterstorage:models/reinforced_locker" }
+	"textures": { "particle": "betterstorage:model/reinforced_locker" }
 }

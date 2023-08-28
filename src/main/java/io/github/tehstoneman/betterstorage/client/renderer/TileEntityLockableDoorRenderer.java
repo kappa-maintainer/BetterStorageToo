@@ -1,10 +1,5 @@
 package io.github.tehstoneman.betterstorage.client.renderer;
 
-import com.mojang.blaze3d.platform.GlStateManager;
-
-import io.github.tehstoneman.betterstorage.common.block.BetterStorageBlocks;
-import io.github.tehstoneman.betterstorage.common.block.BlockLocker;
-import io.github.tehstoneman.betterstorage.common.tileentity.TileEntityLockableDoor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 

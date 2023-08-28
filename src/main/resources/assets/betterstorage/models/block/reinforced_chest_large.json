@@ -2,5 +2,5 @@
 	"loader": "forge:obj",
     "model": "betterstorage:models/block/reinforced_chest_large.obj",
     "flip-v": true,
-	"textures": { "particle": "betterstorage:models/reinforced_chest" }
+	"textures": { "particle": "betterstorage:model/reinforced_chest" }
 }

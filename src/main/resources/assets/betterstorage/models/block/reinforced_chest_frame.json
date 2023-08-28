@@ -1,6 +1,6 @@
 {
 	"loader": "betterstorage:xobj",
     "model": "betterstorage:models/block/reinforced_chest_frame.obj",
-    "flip-v": true,
-	"textures": { "particle": "betterstorage:models/reinforced_frame" }
+    "flip_v": true,
+	"textures": { "particle": "betterstorage:model/reinforced_frame" }
 }
