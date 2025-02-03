@@ -22,7 +22,7 @@ public final class BetterStorageUtils
 				: stack != null && Item.getIdFromItem( match.getItem() ) == Item.getIdFromItem( stack.getItem() )
 						&& ( StackUtils.getRealItemDamage( match ) == OreDictionary.WILDCARD_VALUE
 								|| StackUtils.getRealItemDamage( match ) == StackUtils.getRealItemDamage( stack ) )
-						&& ( !match.hasTagCompound() || match.getTagCompound().hasNoTags() && !stack.hasTagCompound()
+						&& ( !match.hasTagCompound() || match.getTagCompound().isEmpty() && !stack.hasTagCompound()
 								|| match.getTagCompound().equals( stack.getTagCompound() ) );
 	}
 }

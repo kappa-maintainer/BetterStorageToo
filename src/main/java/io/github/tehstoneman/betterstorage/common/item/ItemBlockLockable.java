@@ -51,8 +51,8 @@ public class ItemBlockLockable extends ItemBlock
 	}
 
 	@Override
-	public String getUnlocalizedName( ItemStack stack )
+	public String getTranslationKey( ItemStack stack )
 	{
-		return super.getUnlocalizedName();// + "." + EnumReinforced.byMetadata( stack.getMetadata() ).getName();
+		return super.getTranslationKey();// + "." + EnumReinforced.byMetadata( stack.getMetadata() ).getName();
 	}
 }

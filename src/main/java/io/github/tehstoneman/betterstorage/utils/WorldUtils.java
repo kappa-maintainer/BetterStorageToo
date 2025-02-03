@@ -190,7 +190,7 @@ public final class WorldUtils
 		final double range = Minecraft.getMinecraft().playerController.getBlockReachDistance();
 		final Vec3d start = new Vec3d( player.posX, player.posY + 1.62 - player.getYOffset(), player.posZ );
 		final Vec3d look = player.getLook( 1.0F );
-		final Vec3d end = start.addVector( look.x * range, look.y * range, look.z * range );
+		final Vec3d end = start.add( look.x * range, look.y * range, look.z * range );
 		final RayTraceResult target = player.world.rayTraceBlocks( start, end );
 		Attachments.playerLocal.remove();
 		return target;

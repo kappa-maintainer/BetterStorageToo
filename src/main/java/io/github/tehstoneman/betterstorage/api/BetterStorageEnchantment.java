@@ -70,7 +70,7 @@ public final class BetterStorageEnchantment
 			if( newLevel <= 0 )
 			{
 				list.removeTag( count );
-				if( list.hasNoTags() )
+				if( list.isEmpty() )
 					stack.getTagCompound().removeTag( "ench" );
 			}
 			else

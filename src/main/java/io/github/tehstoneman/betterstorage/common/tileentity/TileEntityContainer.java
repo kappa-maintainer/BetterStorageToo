@@ -294,7 +294,7 @@ public abstract class TileEntityContainer extends TileEntity implements ITickabl
 	/** Returns the weak redstone signal power going into this block. */
 	protected int getWeakRedstoneSignal()
 	{
-		return getWorld().isBlockIndirectlyGettingPowered( pos );
+		return getWorld().getRedstonePowerFromNeighbors( pos );
 	}
 
 	// Comparator related

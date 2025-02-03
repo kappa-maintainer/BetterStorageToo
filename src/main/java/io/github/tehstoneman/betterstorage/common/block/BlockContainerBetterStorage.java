@@ -78,7 +78,7 @@ public abstract class BlockContainerBetterStorage extends BlockBetterStorage imp
 	}
 
 	@Override
-	public void onBlockDestroyedByPlayer( World worldIn, BlockPos pos, IBlockState state )
+	public void onPlayerDestroy( World worldIn, BlockPos pos, IBlockState state )
 	{
 		final TileEntity tileEntity = worldIn.getTileEntity( pos );
 		if( tileEntity instanceof TileEntityContainer )

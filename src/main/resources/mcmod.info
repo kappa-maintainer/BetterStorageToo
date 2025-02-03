@@ -1,18 +1,12 @@
 [{
-	"modid": "betterstorage",
-	"name": "BetterStorageToo",
-	"description": "Adds more storage related blocks and items to the game.",
-	"version": "${version}",
-	"mcversion": "${mc_version}",
-	"url": "http://minecraft.curseforge.com/projects/betterstoragetoo",
-	"updateJSON": "http://minecraft.tehstoneman.com/betterstorage.json",
-	"authorList": [ "TehStoneMan", "copygirl", "Vic Nightfall" ],
-	"credits": "",
-	"logoFile": "",
-	"screenshots": [ ],
-	"parent": "",
-	"useDependencyInformation": "false",
-	"requiredMods": [ ],
-	"dependencies": [ ],
-	"dependants": [ ]
+	"modid": "${mod_id}",
+	"name": "${mod_name}",
+	"version": "${mod_version}",
+	"mcversion": "1.12.2",
+	"description": "${mod_description}",
+	"authorList": [${mod_authors}],
+	"credits": "${mod_credits}",
+	"url": "${mod_url}",
+	"updateJSON": "${mod_update_json}",
+	"logoFile": "${mod_logo_path}"
 }]

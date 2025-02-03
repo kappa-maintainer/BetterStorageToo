@@ -32,7 +32,7 @@ public class ItemCardboardArmor extends ItemArmor implements ICardboardItem, ISp
 	public void register( String name )
 	{
 		this.name = name;
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		setRegistryName( name );
 		//GameRegistry.register( this );
 	}

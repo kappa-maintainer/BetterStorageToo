@@ -74,10 +74,10 @@ public class ItemBucketSlime extends ItemBetterStorage
 	}
 
 	@Override
-	public String getUnlocalizedName( ItemStack stack )
+	public String getTranslationKey( ItemStack stack )
 	{
 		// final int meta = stack.getMetadata();
-		return super.getUnlocalizedName() + "." + EnumSlime.byMetadata( 0 ).getUnlocalizedName();
+		return super.getTranslationKey() + "." + EnumSlime.byMetadata( 0 ).getUnlocalizedName();
 	}
 
 	@Override
@@ -608,7 +608,7 @@ public class ItemBucketSlime extends ItemBetterStorage
 
 		public String getUnlocalizedName()
 		{
-			return resourceLocation.getResourcePath();
+			return resourceLocation.getPath();
 		}
 
 		public int getMetadata()

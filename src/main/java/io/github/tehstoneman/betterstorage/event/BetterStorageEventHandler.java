@@ -58,28 +58,28 @@ public class BetterStorageEventHandler
 
 		if( BetterStorage.config.crateEnabled )
 		{
-			BetterStorageBlocks.CRATE.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.CRATE.getBlockName() );
+			BetterStorageBlocks.CRATE.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.CRATE.getBlockName() );
 			BetterStorageBlocks.CRATE.setRegistryName( BetterStorageBlocks.CRATE.getBlockName() );
 			registry.register( BetterStorageBlocks.CRATE );
 			GameRegistry.registerTileEntity( TileEntityCrate.class, ModInfo.containerCrate );
 		}
 		if( BetterStorage.config.reinforcedChestEnabled )
 		{
-			BetterStorageBlocks.REINFORCED_CHEST.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.REINFORCED_CHEST.getBlockName() );
+			BetterStorageBlocks.REINFORCED_CHEST.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.REINFORCED_CHEST.getBlockName() );
 			BetterStorageBlocks.REINFORCED_CHEST.setRegistryName( BetterStorageBlocks.REINFORCED_CHEST.getBlockName() );
 			registry.register( BetterStorageBlocks.REINFORCED_CHEST );
 			GameRegistry.registerTileEntity( TileEntityReinforcedChest.class, ModInfo.containerReinforcedChest );
 		}
 		if( BetterStorage.config.lockerEnabled )
 		{
-			BetterStorageBlocks.LOCKER.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.LOCKER.getBlockName() );
+			BetterStorageBlocks.LOCKER.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.LOCKER.getBlockName() );
 			BetterStorageBlocks.LOCKER.setRegistryName( BetterStorageBlocks.LOCKER.getBlockName() );
 			registry.register( BetterStorageBlocks.LOCKER );
 			GameRegistry.registerTileEntity( TileEntityLocker.class, ModInfo.containerLocker );
 			if( BetterStorage.config.reinforcedLockerEnabled )
 			{
 				BetterStorageBlocks.REINFORCED_LOCKER
-						.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.REINFORCED_LOCKER.getBlockName() );
+						.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.REINFORCED_LOCKER.getBlockName() );
 				BetterStorageBlocks.REINFORCED_LOCKER.setRegistryName( BetterStorageBlocks.REINFORCED_LOCKER.getBlockName() );
 				registry.register( BetterStorageBlocks.REINFORCED_LOCKER );
 				GameRegistry.registerTileEntity( TileEntityReinforcedLocker.class, ModInfo.containerReinforcedLocker );
@@ -87,20 +87,20 @@ public class BetterStorageEventHandler
 		}
 		if( BetterStorage.config.flintBlockEnabled )
 		{
-			BetterStorageBlocks.BLOCK_FLINT.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.BLOCK_FLINT.getBlockName() );
+			BetterStorageBlocks.BLOCK_FLINT.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.BLOCK_FLINT.getBlockName() );
 			BetterStorageBlocks.BLOCK_FLINT.setRegistryName( BetterStorageBlocks.BLOCK_FLINT.getBlockName() );
 			registry.register( BetterStorageBlocks.BLOCK_FLINT );
 		}
 		if( BetterStorage.config.keyEnabled && BetterStorage.config.lockableDoorEnabled )
 		{
-			BetterStorageBlocks.LOCKABLE_DOOR.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.LOCKABLE_DOOR.getBlockName() );
+			BetterStorageBlocks.LOCKABLE_DOOR.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.LOCKABLE_DOOR.getBlockName() );
 			BetterStorageBlocks.LOCKABLE_DOOR.setRegistryName( BetterStorageBlocks.LOCKABLE_DOOR.getBlockName() );
 			registry.register( BetterStorageBlocks.LOCKABLE_DOOR );
 			GameRegistry.registerTileEntity( TileEntityLockableDoor.class, ModInfo.lockableDoor );
 		}
 		if( BetterStorage.config.cardboardBoxEnabled )
 		{
-			BetterStorageBlocks.CARDBOARD_BOX.setUnlocalizedName( ModInfo.modId + "." + BetterStorageBlocks.CARDBOARD_BOX.getBlockName() );
+			BetterStorageBlocks.CARDBOARD_BOX.setTranslationKey( ModInfo.modId + "." + BetterStorageBlocks.CARDBOARD_BOX.getBlockName() );
 			BetterStorageBlocks.CARDBOARD_BOX.setRegistryName( BetterStorageBlocks.CARDBOARD_BOX.getBlockName() );
 			registry.register( BetterStorageBlocks.CARDBOARD_BOX );
 			GameRegistry.registerTileEntity( TileEntityCardboardBox.class, ModInfo.containerCardboardBox );

@@ -2,7 +2,9 @@
 .gradle/
 .project
 .settings/
+.idea/
 bin/
 build/
+run/
 *.blend?
 *.launch

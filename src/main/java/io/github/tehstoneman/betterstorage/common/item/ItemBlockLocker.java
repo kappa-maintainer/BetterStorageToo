@@ -38,8 +38,8 @@ public class ItemBlockLocker extends ItemBlock
 				&& worldIn.mayPlace( this.block, pos, false, facing, (Entity)null ) )
 		{
 			final EnumFacing enumfacing = EnumFacing.fromAngle( player.rotationYaw );
-			final int i = enumfacing.getFrontOffsetX();
-			final int j = enumfacing.getFrontOffsetZ();
+			final int i = enumfacing.getXOffset();
+			final int j = enumfacing.getZOffset();
 			final boolean flag = i < 0 && hitZ < 0.5F || i > 0 && hitZ > 0.5F || j < 0 && hitX > 0.5F || j > 0 && hitX < 0.5F;
 
 			final int meta = this.getMetadata( itemstack.getMetadata() );

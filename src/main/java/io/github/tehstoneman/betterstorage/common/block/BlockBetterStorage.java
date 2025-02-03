@@ -46,7 +46,7 @@ public class BlockBetterStorage extends Block
 	 */
 	public void registerBlock( IForgeRegistry< Block > registry )
 	{
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		this.setRegistryName( name );
 		registry.register( this );
 

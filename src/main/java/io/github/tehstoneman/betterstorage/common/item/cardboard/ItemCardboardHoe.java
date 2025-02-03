@@ -31,7 +31,7 @@ public class ItemCardboardHoe extends ItemHoe implements ICardboardItem
 
 	public void register()
 	{
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		setRegistryName( name );
 		//GameRegistry.register( this );
 	}

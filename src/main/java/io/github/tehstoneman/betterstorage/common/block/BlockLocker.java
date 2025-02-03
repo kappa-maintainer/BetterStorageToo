@@ -92,7 +92,7 @@ public class BlockLocker extends BlockLockable
 	@Override
 	public IBlockState getStateFromMeta( int meta )
 	{
-		EnumFacing enumfacing = EnumFacing.getFront( meta & 7 );
+		EnumFacing enumfacing = EnumFacing.byIndex( meta & 7 );
 
 		if( enumfacing.getAxis() == EnumFacing.Axis.Y )
 			enumfacing = EnumFacing.NORTH;

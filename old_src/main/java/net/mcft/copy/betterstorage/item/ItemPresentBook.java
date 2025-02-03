@@ -31,7 +31,7 @@ public class ItemPresentBook extends ItemWritableBook
 		setCreativeTab( null );
 
 		final String name = MiscUtils.getName( this );
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		// setTextureName(Constants.modId + ":" + name);
 	}
 

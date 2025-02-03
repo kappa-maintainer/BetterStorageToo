@@ -22,7 +22,7 @@ public abstract class ItemBetterStorage extends Item
 
 	public void register()
 	{
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		setRegistryName( name );
 		//GameRegistry.register( this );
 	}

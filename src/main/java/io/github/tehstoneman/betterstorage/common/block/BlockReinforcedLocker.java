@@ -102,9 +102,9 @@ public class BlockReinforcedLocker extends BlockLockable
 	@Override
 	public IBlockState getStateFromMeta( int meta )
 	{
-		EnumFacing enumfacing = EnumFacing.getFront( (meta & 3) + 2 );
+		EnumFacing enumfacing = EnumFacing.byIndex( (meta & 3) + 2 );
 
-		final Boolean mirrored = ( meta & 8 ) > 0;
+		final boolean mirrored = ( meta & 8 ) > 0;
 
 		return getDefaultState().withProperty( BlockHorizontal.FACING, enumfacing ).withProperty( BlockDoor.HINGE,
 				mirrored ? BlockDoor.EnumHingePosition.RIGHT : BlockDoor.EnumHingePosition.LEFT );

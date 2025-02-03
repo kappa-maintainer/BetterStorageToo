@@ -181,8 +181,8 @@ public class TileEntityCrate extends TileEntity
 		neighborLoop: // Suck it :P
 		for( final EnumFacing dir : EnumFacing.HORIZONTALS )
 		{
-			final int nx = x + dir.getFrontOffsetX();
-			final int nz = z + dir.getFrontOffsetZ();
+			final int nx = x + dir.getXOffset();
+			final int nz = z + dir.getXOffset();
 
 			// Continue if this neighbor block is not part of the crate pile.
 			final TileEntity tileEntity = getWorld().getTileEntity( pos.add( dir.getDirectionVec() ) );
@@ -202,7 +202,7 @@ public class TileEntityCrate extends TileEntity
 				final HashSet< TileEntityCrate > set = new HashSet<>();
 				set.add( neighborCrate );
 				for( final EnumFacing ndir : EnumFacing.HORIZONTALS )
-					checkConnections( nx + ndir.getFrontOffsetX(), y, nz + ndir.getFrontOffsetZ(), pileID, set );
+					checkConnections( nx + ndir.getXOffset(), y, nz + ndir.getZOffset(), pileID, set );
 				crateSets.add( set );
 
 				// If we checked all crates, stop the loop.
@@ -227,7 +227,7 @@ public class TileEntityCrate extends TileEntity
 			set.add( crate );
 		}
 		for( final EnumFacing ndir : EnumFacing.HORIZONTALS )
-			checkConnections( x + ndir.getFrontOffsetX(), y, z + ndir.getFrontOffsetZ(), pileID, set );
+			checkConnections( x + ndir.getXOffset(), y, z + ndir.getZOffset(), pileID, set );
 	}
 
 	/** Tries to connect a crate to the given side */

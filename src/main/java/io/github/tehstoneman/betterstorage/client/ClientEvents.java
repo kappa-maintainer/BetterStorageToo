@@ -97,7 +97,7 @@ public class ClientEvents
 		if( BetterStorage.config.slimeBucketEnabled )
 			for( final EnumSlime slime : EnumSlime.values() )
 				registerItemModel( BetterStorageItems.SLIME_BUCKET, slime.getMetadata(),
-						BetterStorageItems.SLIME_BUCKET.getRegistryName() + "_" + slime.getResourceLocation().getResourcePath() );
+						BetterStorageItems.SLIME_BUCKET.getRegistryName() + "_" + slime.getResourceLocation().getPath() );
 	}
 
 	/*

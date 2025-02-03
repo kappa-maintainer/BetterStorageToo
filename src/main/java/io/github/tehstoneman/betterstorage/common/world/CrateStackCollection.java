@@ -94,7 +94,7 @@ public class CrateStackCollection extends net.minecraft.world.storage.WorldSaved
 	@Override
 	public void readFromNBT( NBTTagCompound compound )
 	{
-		if( !compound.hasNoTags() )
+		if( !compound.isEmpty() )
 			for( final String key : compound.getKeySet() )
 			{
 				final CrateStackHandler crateStackHandler = new CrateStackHandler( 0 );

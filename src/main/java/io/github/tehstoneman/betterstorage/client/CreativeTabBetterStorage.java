@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
+
 public class CreativeTabBetterStorage extends CreativeTabs
 {
 	public CreativeTabBetterStorage()
@@ -17,7 +19,8 @@ public class CreativeTabBetterStorage extends CreativeTabs
 
 	@Override
 	@SideOnly( Side.CLIENT )
-	public ItemStack getTabIconItem()
+	@Nonnull
+	public ItemStack createIcon()
 	{
 		if( BetterStorageBlocks.CRATE != null )
 			return new ItemStack( BetterStorageBlocks.CRATE );

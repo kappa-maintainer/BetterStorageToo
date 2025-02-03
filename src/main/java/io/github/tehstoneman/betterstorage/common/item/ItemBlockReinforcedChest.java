@@ -79,14 +79,14 @@ public class ItemBlockReinforcedChest extends ItemBlock
 		if( material != null )
 		{
 			final String materialName = BetterStorage.proxy.localize( material.getUnlocalizedName() );
-			final String name = BetterStorage.proxy.localize( getUnlocalizedName() + ".name.full", materialName );
+			final String name = BetterStorage.proxy.localize( getTranslationKey() + ".name.full", materialName );
 			return name.trim();
 		}
 		return super.getItemStackDisplayName( stack );
 	}
 
 	@Override
-	public String getUnlocalizedName( ItemStack stack )
+	public String getTranslationKey( ItemStack stack )
 	{
 		// final EnumReinforced material = EnumReinforced.byMetadata( stack.getMetadata() );
 		// return super.getUnlocalizedName() + "." + material.getUnlocalizedName();
@@ -95,10 +95,10 @@ public class ItemBlockReinforcedChest extends ItemBlock
 		if( material != null )
 		{
 			final String materialName = BetterStorage.proxy.localize( material.getUnlocalizedName() );
-			final String name = BetterStorage.proxy.localize( getUnlocalizedName() + ".name.full", materialName );
-			return super.getUnlocalizedName() + "." + material.getUnlocalizedName();
+			final String name = BetterStorage.proxy.localize( getTranslationKey() + ".name.full", materialName );
+			return super.getTranslationKey() + "." + material.getUnlocalizedName();
 		}
-		return super.getUnlocalizedName();
+		return super.getTranslationKey();
 	}
 
 	@Override

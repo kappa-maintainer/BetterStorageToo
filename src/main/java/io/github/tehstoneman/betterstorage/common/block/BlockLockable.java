@@ -80,7 +80,7 @@ public abstract class BlockLockable extends BlockContainerBetterStorage
 	@Override
 	public IBlockState getStateFromMeta( int meta )
 	{
-		final EnumFacing facing = EnumFacing.getFront( ( meta & 3 ) + 2 );
+		final EnumFacing facing = EnumFacing.byIndex( ( meta & 3 ) + 2 );
 		final boolean hidden = ( meta & 4 ) != 0;
 		return getDefaultState().withProperty( BlockHorizontal.FACING, facing );
 	}

@@ -58,7 +58,7 @@ public class BlockLockableDoor extends BlockBetterStorage
 	/*@Override
 	public void registerBlock()
 	{
-		setUnlocalizedName( ModInfo.modId + "." + name );
+		setTranslationKey( ModInfo.modId + "." + name );
 		this.setRegistryName( name );
 		GameRegistry.register( this );
 	}*/
@@ -127,7 +127,7 @@ public class BlockLockableDoor extends BlockBetterStorage
 				? getDefaultState().withProperty( BlockDoor.HALF, EnumDoorHalf.UPPER ).withProperty( BlockDoor.HINGE,
 						( meta & 1 ) > 0 ? EnumHingePosition.RIGHT : EnumHingePosition.LEFT )
 				: getDefaultState().withProperty( BlockDoor.HALF, EnumDoorHalf.LOWER )
-						.withProperty( BlockDoor.FACING, EnumFacing.getHorizontal( meta & 3 ).rotateYCCW() )
+						.withProperty( BlockDoor.FACING, EnumFacing.byHorizontalIndex( meta & 3 ).rotateYCCW() )
 						.withProperty( BlockDoor.OPEN, Boolean.valueOf( ( meta & 4 ) > 0 ) );
 	}
 
@@ -328,7 +328,7 @@ public class BlockLockableDoor extends BlockBetterStorage
 
 	@Override
 	@SideOnly( Side.CLIENT )
-	public BlockRenderLayer getBlockLayer()
+	public BlockRenderLayer getRenderLayer()
 	{
 		return BlockRenderLayer.CUTOUT;
 	}

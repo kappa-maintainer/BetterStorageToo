@@ -295,7 +295,7 @@ public class TileEntityLockableDoor extends TileEntity implements ILockable, IHa
 		super.readFromNBT( compound );
 		isOpen = compound.getBoolean( "isOpen" );
 		isMirrored = compound.getBoolean( "isMirrored" );
-		orientation = EnumFacing.getFront( compound.getByte( "orientation" ) );
+		orientation = EnumFacing.byIndex( compound.getByte( "orientation" ) );
 		if( compound.hasKey( "lock" ) )
 			lockAttachment.setItem( new ItemStack( compound.getCompoundTag( "lock" ) ) );
 		updateLockPosition();

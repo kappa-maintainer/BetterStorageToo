@@ -29,7 +29,7 @@ import net.minecraftforge.oredict.RecipeSorter.Category;
 //@formatter:off
 @Mod( modid						= ModInfo.modId,
       name						= ModInfo.modName,
-      version					= ModInfo.modVersion,
+      version					= Tags.VERSION,
       dependencies				= ModInfo.dependencies,
       acceptedMinecraftVersions	= ModInfo.acceptedMC,
       guiFactory				= ModInfo.guiFactory,
