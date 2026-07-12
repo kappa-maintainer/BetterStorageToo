@@ -5,7 +5,7 @@ public final class ModInfo
 	public static final String	modId						= "betterstorage";
 	public static final String	modName						= "BetterStorageToo";
 	public static final String	dependencies				= "required-after:forge@[14.23.5.2847,); after:jei;";
-	public static final String	acceptedMC					= "@minecraft_version@";
+	public static final String	acceptedMC					= "1.12.2";
 	public static final String	guiFactory					= "io.github.tehstoneman.betterstorage.client.gui.BetterStorageGuiFactory";
 	public static final String	updateJson					= "http://tehstoneman.github.io/" + modId + ".json";
 

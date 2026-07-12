@@ -97,7 +97,7 @@ public class BlockLocker extends BlockLockable
 		if( enumfacing.getAxis() == EnumFacing.Axis.Y )
 			enumfacing = EnumFacing.NORTH;
 		
-		Boolean mirrored = (meta & 8) > 0;
+		boolean mirrored = (meta & 8) > 0;
 		
 
 		return getDefaultState().withProperty( BlockHorizontal.FACING, enumfacing ).withProperty(BlockDoor.HINGE, mirrored ? BlockDoor.EnumHingePosition.RIGHT : BlockDoor.EnumHingePosition.LEFT);

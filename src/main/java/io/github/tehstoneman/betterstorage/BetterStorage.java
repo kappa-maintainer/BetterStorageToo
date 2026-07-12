@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import io.github.tehstoneman.betterstorage.api.BetterStorageAPI;
 import io.github.tehstoneman.betterstorage.client.CreativeTabBetterStorage;
 import io.github.tehstoneman.betterstorage.common.enchantment.EnchantmentBetterStorage;
-import io.github.tehstoneman.betterstorage.common.item.crafting.KeyColorRecipe;
 import io.github.tehstoneman.betterstorage.config.BetterStorageConfig;
 import io.github.tehstoneman.betterstorage.event.BetterStorageEventHandler;
 import io.github.tehstoneman.betterstorage.proxy.CommonProxy;
@@ -23,8 +22,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.oredict.RecipeSorter;
-import net.minecraftforge.oredict.RecipeSorter.Category;
 
 //@formatter:off
 @Mod( modid						= ModInfo.modId,
