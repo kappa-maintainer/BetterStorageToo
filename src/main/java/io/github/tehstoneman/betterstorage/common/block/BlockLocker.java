@@ -67,13 +67,25 @@ public class BlockLocker extends BlockLockable
 	@Override
 	public boolean isOpaqueCube( IBlockState state )
 	{
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isFullCube( IBlockState state )
 	{
+		return false;
+	}
+
+	@Override
+	public boolean doesSideBlockRendering( IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face )
+	{
 		return true;
+	}
+
+	@Override
+	public float getAmbientOcclusionLightValue( IBlockState state )
+	{
+		return 1.0F;
 	}
 
 	@Override

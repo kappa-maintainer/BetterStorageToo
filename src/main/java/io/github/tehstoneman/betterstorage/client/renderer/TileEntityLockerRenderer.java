@@ -61,11 +61,6 @@ public class TileEntityLockerRenderer extends TileEntitySpecialRenderer< TileEnt
 			if( blockRenderer == null )
 				blockRenderer = Minecraft.getMinecraft().getBlockRendererDispatcher();
 
-			GlStateManager.translate( 0.5, 0.0, 0.5 );
-			final EnumFacing facing = state.getValue( BlockHorizontal.FACING );
-			GlStateManager.rotate( 180 - facing.getHorizontalAngle(), 0, 1, 0 );
-			GlStateManager.translate( -0.5, 0.0, -0.5 );
-
 			renderBase( locker, partialTicks, destroyStage, state );
 			renderDoor( locker, partialTicks, destroyStage, state );
 			renderItem( locker, partialTicks, destroyStage, state );
@@ -119,10 +114,34 @@ public class TileEntityLockerRenderer extends TileEntitySpecialRenderer< TileEnt
 		openAngle = openAngle * 90;
 
 		final boolean left = state.getValue( BlockDoor.HINGE ) == EnumHingePosition.LEFT;
+		final EnumFacing facing = state.getValue( BlockHorizontal.FACING );
+		final float hingeX, hingeZ;
+		switch( facing )
+		{
+		case NORTH:
+			hingeX = left ? 15F / 16F : 1F / 16F;
+			hingeZ = 1F / 16F;
+			break;
+		case SOUTH:
+			hingeX = left ? 1F / 16F : 15F / 16F;
+			hingeZ = 15F / 16F;
+			break;
+		case WEST:
+			hingeX = 1F / 16F;
+			hingeZ = left ? 1F / 16F : 15F / 16F;
+			break;
+		case EAST:
+			hingeX = 15F / 16F;
+			hingeZ = left ? 15F / 16F : 1F / 16F;
+			break;
+		default:
+			hingeX = left ? 15F / 16F : 1F / 16F;
+			hingeZ = 1F / 16F;
+		}
 
-		GlStateManager.translate( left ? 15F / 16F : 1F / 16F, 0, 1.0 / 16.0 );
+		GlStateManager.translate( hingeX, 0, hingeZ );
 		GlStateManager.rotate( left ? -openAngle : openAngle, 0, 1, 0 );
-		GlStateManager.translate( left ? -15F / 16F : -1F / 16F, 0, -1.0 / 16.0 );
+		GlStateManager.translate( -hingeX, 0, -hingeZ );
 
 		final World world = locker.getWorld();
 		GlStateManager.translate( -locker.getPos().getX(), -locker.getPos().getY(), -locker.getPos().getZ() );
@@ -161,10 +180,34 @@ public class TileEntityLockerRenderer extends TileEntitySpecialRenderer< TileEnt
 
 			final RenderItem itemRenderer = Minecraft.getMinecraft().getRenderItem();
 			final boolean left = state.getValue( BlockDoor.HINGE ) == EnumHingePosition.LEFT;
+			final EnumFacing facing = state.getValue( BlockHorizontal.FACING );
+			final float hingeX, hingeZ;
+			switch( facing )
+			{
+			case NORTH:
+				hingeX = left ? 15F / 16F : 1F / 16F;
+				hingeZ = 1F / 16F;
+				break;
+			case SOUTH:
+				hingeX = left ? 1F / 16F : 15F / 16F;
+				hingeZ = 15F / 16F;
+				break;
+			case WEST:
+				hingeX = 1F / 16F;
+				hingeZ = left ? 1F / 16F : 15F / 16F;
+				break;
+			case EAST:
+				hingeX = 15F / 16F;
+				hingeZ = left ? 15F / 16F : 1F / 16F;
+				break;
+			default:
+				hingeX = left ? 15F / 16F : 1F / 16F;
+				hingeZ = 1F / 16F;
+			}
 
-			GlStateManager.translate( left ? 15F / 16F : 1F / 16F, 0, 1.0 / 16.0 );
+			GlStateManager.translate( hingeX, 0, hingeZ );
 			GlStateManager.rotate( left ? -openAngle : openAngle, 0, 1, 0 );
-			GlStateManager.translate( left ? -15F / 16F : -1F / 16F, 0, -1.0 / 16.0 );
+			GlStateManager.translate( -hingeX, 0, -hingeZ );
 
 			GlStateManager.rotate( 180.0F, 0.0F, 1.0F, 0.0F );
 			final double x = left ? -3.5 / 16.0 : -12.5 / 16.0;

@@ -77,6 +77,18 @@ public class BlockReinforcedLocker extends BlockLockable
 	}
 
 	@Override
+	public boolean doesSideBlockRendering( IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face )
+	{
+		return true;
+	}
+
+	@Override
+	public float getAmbientOcclusionLightValue( IBlockState state )
+	{
+		return 1.0F;
+	}
+
+	@Override
 	@SideOnly( Side.CLIENT )
 	public EnumBlockRenderType getRenderType( IBlockState state )
 	{
